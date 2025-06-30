@@ -1,15 +1,8 @@
-// const flattenArray = (arr) => {
-//     if (!Array.isArray(arr)) return arr;
+const capitalizeWords = (arr) => {
+    if (arr.length === 0) return [];
+    const [first, ...rest] = arr;
+    return [first.toUpperCase(), ...capitalizeWords(rest)];
+};
 
-//     const el = arr.pop();
-
-//     if (Array.isArray(el)) {
-//         flattenArray(el);
-//     } else {
-//         return el;
-//     }
-
-//     return [...flattenArray(arr)];
-// };
-
-// console.log(flattenArray([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
+// let words = ['i', 'am', 'learning', 'recursion'];
+console.log(capitalizeWords(['i', 'am', 'learning', 'recursion'])); // ['I', 'AM', 'LEARNING', 'RECURSION']

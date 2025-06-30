@@ -1,15 +1,14 @@
+console.clear();
+console.log('Flatten Array');
+
 const flattenArray = (arr) => {
-    if (arr.length === 0) return [];
-
-    const el = arr.pop();
-
-    if (Array.isArray(el)) {
-        flattenArray(el);
-    } else {
-        return el;
+    if (!Array.isArray(arr)) {
+        return arr;
     }
 
-    return [...flattenArray(arr)];
+    return arr.reduce((acc, val) => {
+        return acc.concat(flattenArray(val));
+    }, []);
 };
 
 console.log(flattenArray([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
