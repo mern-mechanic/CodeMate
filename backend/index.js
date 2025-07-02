@@ -1,18 +1,18 @@
 // Load environment variables
-require("dotenv").config();
+require('dotenv').config();
 
 const http = require('http');
 const cors = require('cors');
 const express = require('express');
-const connectToDatabase = require("./src/config/database");
+const connectToDatabase = require('./src/config/database');
 const cookieParser = require('cookie-parser');
 
 const authRouter = require('./src/routers/auth');
 const profileRouter = require('./src/routers/profile');
 const connectionRouter = require('./src/routers/connection');
-const chatRouter = require("./src/routers/chat");
+const chatRouter = require('./src/routers/chat');
 
-const { initializeSocket } = require("./socket");
+const { initializeSocket } = require('./socket');
 
 const app = express();
 
@@ -21,12 +21,14 @@ initializeSocket(server);
 
 const PORT = process.env.PORT || 8000;
 
-app.use(cors({
-    origin: 'http://localhost:8000',
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+    cors({
+        origin: 'http://localhost:8000',
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+    })
+);
 app.use(express.json());
 app.use(cookieParser());
 
@@ -44,7 +46,7 @@ const initializeConnection = async () => {
         console.error('Database connection failed:', error);
         process.exit(1); // Exit the process with failure
     }
-}
+};
 
 /*
     The public directory is looked from where the server is running.

@@ -8,7 +8,7 @@ const profileViewController = async (req, res) => {
         if (!profileId) {
             return res.status(400).json({ error: 'Not a valid profile' });
         }
-        const user = await User.findOne({_id: profileId});
+        const user = await User.findOne({ _id: profileId });
         res.json({
             status: true,
             message: 'User fetched successfully',
@@ -17,13 +17,13 @@ const profileViewController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
 
 const profileEditController = async (req, res) => {
     try {
         if (validateEditProfileData(req.body)) {
             const user = req?.user;
-            Object.keys(req.body).forEach(field => {
+            Object.keys(req.body).forEach((field) => {
                 if (field in user) {
                     user[field] = req.body[field];
                 }
@@ -40,14 +40,16 @@ const profileEditController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
 
 const profileUpdatePasswordController = async (req, res) => {
     try {
         const password = req?.body?.password;
 
         if (!password || typeof password !== 'string' || password.length < 6) {
-            return res.status(400).json({ error: 'Password must be a string with at least 6 characters.' });
+            return res
+                .status(400)
+                .json({ error: 'Password must be a string with at least 6 characters.' });
         }
 
         const user = req?.user;
@@ -69,7 +71,7 @@ const profileUpdatePasswordController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
 
 const profileActivateController = async (req, res) => {
     try {
@@ -88,7 +90,7 @@ const profileActivateController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
 
 const profileDeactivateController = async (req, res) => {
     try {
@@ -107,7 +109,7 @@ const profileDeactivateController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
 
 const profileListController = async (req, res) => {
     try {
@@ -120,7 +122,32 @@ const profileListController = async (req, res) => {
     } catch (error) {
         return res.status(400).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
+
+// /profile/reverse-string
+const reverseStringController = async (req, res) => {
+    try {
+        const { str } = req.body;
+        const strArr = str.split('');
+
+        const mid = strArr.length / 2;
+        let start = 0;
+
+        while (start < mid) {
+            const temp = strArr[start];
+            strArr[start] = strArr[strArr.length - start - 1];
+            strArr[strArr.length - start - 1] = temp;
+            start++;
+        }
+
+        res.json({
+            status: true,
+            data: strArr.join(''),
+        });
+    } catch (error) {
+        return res.status(400).json({ error: error.message || 'Internal Server Error' });
+    }
+};
 
 module.exports = {
     profileViewController,
@@ -129,4 +156,5 @@ module.exports = {
     profileActivateController,
     profileDeactivateController,
     profileUpdatePasswordController,
+    reverseStringController,
 };
