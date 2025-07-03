@@ -5,7 +5,7 @@ const bubbleSort = (arr) => {
     let comparisonCount = 0;
 
     // loop over array and sort items pair by pair
-    while (comparisonCount < length) {   
+    while (comparisonCount < length) {
         while (pointer < length - comparisonCount) {
             if (arr[pointer] > arr[pointer + 1]) {
                 const temp = arr[pointer + 1];
@@ -19,10 +19,9 @@ const bubbleSort = (arr) => {
     }
 
     return arr;
-}
+};
 
 console.log(bubbleSort([11, 122, 23, 55, 111, 231]));
-
 
 const bubbleSortIncreasing = (arr) => {
     // initialize pointers to be traversed over the array
@@ -45,6 +44,6 @@ const bubbleSortIncreasing = (arr) => {
 
     // return array
     return arr;
-}
+};
 
 console.log(bubbleSortIncreasing([11, 122, 23, 5, 55, 111, 231]));
