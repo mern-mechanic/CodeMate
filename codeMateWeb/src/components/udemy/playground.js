@@ -1,76 +1,40 @@
-// Square Pattern
-for (let i = 0; i < 5; i++) {
-    let row = '';
-    for (let j = 0; j < 5; j++) {
-        row += '*';
-    }
-    console.log(row);
-}
+/*
+Sliding Window - minSubArrayLen
+Write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.
 
-// Triangle Pattern
-for (let i = 0; i < 5; i++) {
-    let row = '';
-    for (let j = 0; j <= i; j++) {
-        row += '* ';
-    }
-    console.log(row);
-}
+This function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function. If there isn't one, return 0 instead.
+Examples:
 
-for (let i = 1; i <= 5; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) {
-        row += `${j} `;
-    }
-    console.log(row);
-}
+minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
+minSubArrayLen([2,1,6,5,4], 9) // 2 -> because [5,4] is the smallest subarray
+minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 1 -> because [62] is greater than 52
+minSubArrayLen([1,4,16,22,5,7,8,9,10],39) // 3
+minSubArrayLen([1,4,16,22,5,7,8,9,10],55) // 5
+minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11) // 2
+minSubArrayLen([1,4,16,22,5,7,8,9,10],95) // 0
+Time Complexity - O(n)
 
-for (let i = 1; i <= 5; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) {
-        row += `${i} `;
-    }
-    console.log(row);
-}
+Space Complexity - O(1)
+*/
 
-for (let i = 5; i > 0; i--) {
-    let row = '';
-    for (let j = 1; j <= i; j++) {
-        row += `${j} `;
-    }
-    console.log(row);
-}
+const minSubArrayLenSlide = (arr, num) => {
+    let p1 = 0;
+    let p2 = 0;
+    let window = 0;
+    let windowSize = Infinity;
 
-for (let i = 0; i <= 5; i++) {
-    let row = '';
-    for (let j = 5; j >= 0; j--) {
-        // console.log(`${i} ${j}`);
-        if (j - i <= 0) {
-            row += '* ';
-        } else {
-            row += '_ ';
+    while (p2 < arr.length) {
+        window += arr[p2];
+        p2++;
+
+        while (window >= num) {
+            windowSize = Math.min(windowSize, p2 - p1);
+            window -= arr[p1];
+            p1++;
         }
     }
-    console.log(row);
-}
 
-for (let i = 0; i < 5; i++) {
-    let row = '';
-    for (let j = 0; j < 5 - i - 1; j++) {
-        row += '_ ';
-    }
-    for (let j = 0; j < i + 1; j++) {
-        row += '* ';
-    }
-    console.log(row);
-}
-let num = 6;
+    return windowSize;
+};
 
-let toggle = 0;
-for (let i = 0; i < num; i++) {
-    let row = '';
-    for (let j = 0; j <= i; j++) {
-        toggle = toggle === 0 ? 1 : 0;
-        row += `${toggle} `;
-    }
-    console.log(row);
-}
+console.log(minSubArrayLenSlide([2, 3, 1, 2, 4, 3], 7)); // 2
