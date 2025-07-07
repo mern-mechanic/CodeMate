@@ -4,13 +4,13 @@
 
 const isOdd = (val) => val % 2 !== 0;
 
-function someRecursive(arr, isOdd) {
+function ifAnyNumInArrIsOdd(arr, isOdd) {
     if (arr.length < 1) return false;
 
     const [first, ...rest] = arr;
     if (isOdd(first)) return true;
 
-    return someRecursive(rest, isOdd);
+    return ifAnyNumInArrIsOdd(rest, isOdd);
 }
 
-console.log(someRecursive([4, 2, 6, 5], isOdd)); // true
+console.log(ifAnyNumInArrIsOdd([4, 2, 6, 5], isOdd)); // true

@@ -18,4 +18,7 @@ Bonus:
 Time - O(n log n)
 
 Space - O(1)
+
+use frequency counter pattern to calculate the frequency and then loop over it
+
 */

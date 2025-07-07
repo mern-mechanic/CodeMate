@@ -1,5 +1,5 @@
 const fibonacciNumber = (num) => {
-    if (num < 2) return 1;
+    if (num < 3) return 1;
 
     return fibonacciNumber(num - 1) + fibonacciNumber(num - 2);
 };

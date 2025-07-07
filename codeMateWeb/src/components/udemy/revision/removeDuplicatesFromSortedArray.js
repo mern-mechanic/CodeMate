@@ -1,4 +1,4 @@
-const removeDuplicatesFromNumberArray = (arr) => {
+const removeDuplicatesFromSortedArray = (arr) => {
     let pointer = 0;
     let start = 0;
 
@@ -13,4 +13,4 @@ const removeDuplicatesFromNumberArray = (arr) => {
     return arr.slice(0, pointer + 1);
 };
 
-console.log(removeDuplicatesFromNumberArray([1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]));
+console.log(removeDuplicatesFromSortedArray([1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]));

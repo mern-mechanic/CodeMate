@@ -1,4 +1,4 @@
-const findLongestSubstring = (str) => {
+const findLongestUniqueSubstring = (str) => {
     let hasSeen = {}; // Notebook of seen characters and their positions
     let p1 = 0; // Start of current window
     let p2 = 0; // Current character
@@ -19,10 +19,10 @@ const findLongestSubstring = (str) => {
     return maxLen;
 };
 
-// console.log(findLongestSubstring('')); // 0
-// console.log(findLongestSubstring('rithmschool')); // 7
-// console.log(findLongestSubstring('thisisawesome')); // 6
-// console.log(findLongestSubstring('thecatinthehat')); // 7
-console.log(findLongestSubstring('bbbbbb')); // 1
-// console.log(findLongestSubstring('longestsubstring')); // 8
-// console.log(findLongestSubstring('thisishowwedoit')); // 6
+// console.log(findLongestUniqueSubstring('')); // 0
+// console.log(findLongestUniqueSubstring('rithmschool')); // 7
+// console.log(findLongestUniqueSubstring('thisisawesome')); // 6
+// console.log(findLongestUniqueSubstring('thecatinthehat')); // 7
+console.log(findLongestUniqueSubstring('bbbbbb')); // 1
+// console.log(findLongestUniqueSubstring('longestsubstring')); // 8
+// console.log(findLongestUniqueSubstring('thisishowwedoit')); // 6

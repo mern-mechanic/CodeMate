@@ -1,3 +1,8 @@
+/*
+    Given a sorted array of integers and a target average,
+    write a function called averagePair that determines whether there is a pair of values in the array whose average equals the target.
+*/
+
 const averagePair = (arr, avg) => {
     let left = 0;
     let right = arr.length - 1;

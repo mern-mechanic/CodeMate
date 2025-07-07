@@ -1,4 +1,4 @@
-const removeNumberFromArray = (arr, num) => {
+const removeSpecificNumberFromArray = (arr, num) => {
     let p1 = 0;
     let p2 = 0;
 
@@ -13,4 +13,4 @@ const removeNumberFromArray = (arr, num) => {
     return arr.slice(0, p1);
 };
 
-console.log(removeNumberFromArray([1, 2, 3, 4, 4, 3, 4, 2, 3, 2, 2, 3, 3, 4, 2], 2));
+console.log(removeSpecificNumberFromArray([1, 2, 3, 4, 4, 3, 4, 2, 3, 2, 2, 3, 3, 4, 2], 2));

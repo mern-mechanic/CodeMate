@@ -15,7 +15,6 @@ const findWordsContainingLetters = (arr, letter) => {
     }
 
     return containsLetter;
-    x;
 };
 
 console.log(
