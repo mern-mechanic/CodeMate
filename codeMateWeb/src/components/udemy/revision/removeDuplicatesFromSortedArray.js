@@ -1,16 +1,16 @@
 const removeDuplicatesFromSortedArray = (arr) => {
-    let pointer = 0;
-    let start = 0;
+    let p1 = 0;
+    let p2 = 0;
 
-    while (start < arr.length) {
-        if (arr[start] > arr[pointer]) {
-            ++pointer;
-            arr[pointer] = arr[start];
+    while (p2 < arr.length) {
+        if (arr[p2] > arr[p1]) {
+            ++p1;
+            arr[p1] = arr[p2];
         }
-        start++;
+        p2++;
     }
 
-    return arr.slice(0, pointer + 1);
+    return arr.slice(0, p1 + 1);
 };
 
 console.log(removeDuplicatesFromSortedArray([1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]));

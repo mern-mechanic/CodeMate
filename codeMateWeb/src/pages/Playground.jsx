@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 // import '../components/playground/js/constructor'
 // import '../components/playground/js/polyfill'
 // import '../components/playground/js/closure'
@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react'
 // import '../components/playground/js/this'
 // import '../components/playground/js/promise'
 // import '../components/playground/js/asyncAwait'
-
+import '../components/playground/';
 
 const Stopwatch = () => {
     const [time, setTime] = useState(0);
@@ -16,7 +16,7 @@ const Stopwatch = () => {
         let intervalId;
         if (isRunning) {
             intervalId = setInterval(() => {
-                setTime(prevTime => prevTime + 1);
+                setTime((prevTime) => prevTime + 1);
             }, 1000);
         }
         return () => clearInterval(intervalId);
@@ -26,8 +26,12 @@ const Stopwatch = () => {
         handleStart();
     }, []);
 
-    const hours = Math.floor(time / 3600).toString().padStart(2, '0');
-    const minutes = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
+    const hours = Math.floor(time / 3600)
+        .toString()
+        .padStart(2, '0');
+    const minutes = Math.floor((time % 3600) / 60)
+        .toString()
+        .padStart(2, '0');
     const seconds = (time % 60).toString().padStart(2, '0');
 
     const handleStart = () => {
@@ -96,7 +100,7 @@ const Playground = () => {
         <div>
             <Stopwatch />
         </div>
-    )
-}
+    );
+};
 
-export default Playground
+export default Playground;

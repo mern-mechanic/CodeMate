@@ -46,9 +46,9 @@ function App() {
                 <Route path="/help" element={<Help />} />
                 <Route path="/algo" element={<Algo />} />
                 <Route path="/askhay" element={<Akshay />} />
-                <Route path="/udemy" element={<Udemy />} />
+                <Route path="/udemy" element={<Playground />} />
                 <Route path="/connections" element={<Connections />} />
-                <Route path="/playground" element={<Playground />} />
+                <Route path="/playground" element={<Udemy />} />
                 <Route path="/memo" element={<Memo />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="*" element={<NotFound />} />

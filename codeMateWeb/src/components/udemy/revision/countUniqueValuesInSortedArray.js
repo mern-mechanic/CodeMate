@@ -1,4 +1,4 @@
-const countUniqueValues = (arr) => {
+const countUniqueValuesInSortedArray = (arr) => {
     if (arr.length === 0) return 0;
 
     let p1 = 0;
@@ -15,4 +15,4 @@ const countUniqueValues = (arr) => {
     return p1 + 1;
 };
 
-console.log(countUniqueValues([1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8]));
+console.log(countUniqueValuesInSortedArray([1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8]));

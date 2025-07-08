@@ -1,22 +1,13 @@
-const minSubArrayLen = (arr, num) => {
-    let p1 = 0;
-    let p2 = 0;
-    let window = 0;
-    let windowSize = Infinity;
+const calculateMaxDifference = (arr) => {
+    let minSoFar = Infinity;
+    let maxDiff = -Infinity;
 
-    while (p2 < arr.length) {
-        window += arr[p2];
-        p2++;
-
-        while (window >= num) {
-            windowSize = Math.min(windowSize, p2 - p1);
-            window -= arr[p1];
-            p1++;
-        }
+    for (let i = 0; i < arr.length; i++) {
+        minSoFar = Math.min(minSoFar, arr[i]);
+        maxDiff = Math.max(maxDiff, arr[i] - minSoFar);
     }
 
-    return windowSize;
+    return maxDiff;
 };
 
-// console.log(minSubArrayLen([1, 5, 6, 7, 4], 4));
-console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
+console.log(calculateMaxDifference([7, 1, 5, 3, 6, 4])); // 5

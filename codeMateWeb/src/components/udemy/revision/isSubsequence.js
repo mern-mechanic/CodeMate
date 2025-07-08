@@ -1,15 +1,15 @@
 const isSubsequence = (word, string) => {
-    let wordPointer = 0;
-    let stringPointer = 0;
+    let p1 = 0;
+    let p2 = 0;
 
-    while (stringPointer < string.length) {
-        if (string[stringPointer] === word[wordPointer]) {
-            wordPointer++;
-            if (wordPointer === word.length) return true;
+    while (p2 < string.length) {
+        if (string[p2] === word[p1]) {
+            p1++;
+            if (p1 === word.length) return true;
         } else {
-            wordPointer = 0;
+            p1 = 0;
         }
-        stringPointer++;
+        p2++;
     }
 
     return false;

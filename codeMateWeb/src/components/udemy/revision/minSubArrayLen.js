@@ -1,3 +1,7 @@
+/*
+Given an array of positive integers arr and a positive integer num, return the minimal length of a contiguous subarray of which the sum is greater than or equal to num.
+If there is no such subarray, return 0 instead.
+*/
 const minSubArrayLen = (arr, num) => {
     let p1 = 0;
     let p2 = 0;

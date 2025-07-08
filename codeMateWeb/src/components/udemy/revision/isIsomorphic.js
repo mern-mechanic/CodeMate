@@ -1,21 +1,23 @@
-const isIsomorphic = (s, t) => {
-    if (s.length !== t.length) return false;
-    let strMap = {};
-    let sCopy = s.split('');
+const isIsomorphic = (str1, str2) => {
+    if (str1.length !== str2.length) return false;
 
-    let p1 = 0;
+    let mapStr1ToStr2 = {};
+    let mapStr2ToStr1 = {};
 
-    while (p1 < s.length) {
-        if (!strMap[s[p1]]) {
-            strMap[s[p1]] = t[p1];
-        }
-        sCopy[p1] = strMap[s[p1]];
-        p1++;
+    for (let i = 0; i < str1.length; i++) {
+        if (
+            (mapStr1ToStr2[str1[i]] && mapStr1ToStr2[str1[i]] !== str2[i]) ||
+            (mapStr2ToStr1[str2[i]] && mapStr2ToStr1[str2[i]] !== str1[i])
+        )
+            return false;
+
+        mapStr1ToStr2[str1[i]] = str2[i];
+        mapStr2ToStr1[str2[i]] = str1[i];
     }
 
-    console.log(sCopy.join(''));
-
-    return sCopy.join('') === t;
+    return true;
 };
 
-console.log(isIsomorphic('egg', 'add'));
+console.log(isIsomorphic('egg', 'kdd')); // true
+console.log(isIsomorphic('foo', 'bar')); // false
+console.log(isIsomorphic('paper', 'title')); // true
