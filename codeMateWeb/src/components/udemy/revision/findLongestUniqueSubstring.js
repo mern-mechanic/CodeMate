@@ -1,28 +1,30 @@
 const findLongestUniqueSubstring = (str) => {
-    let hasSeen = {}; // Notebook of seen characters and their positions
-    let p1 = 0; // Start of current window
-    let p2 = 0; // Current character
-    let maxLen = 0; // Longest unique substring length
+    if (!str.length) return 0;
+
+    let p1 = 0;
+    let p2 = 0;
+    const seenCharacters = {};
+    let maxLength = 0;
 
     while (p2 < str.length) {
         const char = str[p2];
 
-        if (hasSeen[char] >= p1) {
-            p1 = hasSeen[char] + 1; // Jump start to after the repeated character
+        if (seenCharacters[char] >= p1) {
+            p1 = seenCharacters[char] + 1;
         }
 
-        hasSeen[char] = p2; // Write/update position in notebook
-        maxLen = Math.max(maxLen, p2 - p1 + 1); // Update max length
-        p2++; // Move forward
+        maxLength = Math.max(maxLength, p2 - p1 + 1);
+        seenCharacters[char] = p2;
+        p2++;
     }
 
-    return maxLen;
+    return maxLength;
 };
 
-// console.log(findLongestUniqueSubstring('')); // 0
-// console.log(findLongestUniqueSubstring('rithmschool')); // 7
-// console.log(findLongestUniqueSubstring('thisisawesome')); // 6
-// console.log(findLongestUniqueSubstring('thecatinthehat')); // 7
+console.log(findLongestUniqueSubstring('')); // 0
+console.log(findLongestUniqueSubstring('rithmschool')); // 7
+console.log(findLongestUniqueSubstring('thisisawesome')); // 6
+console.log(findLongestUniqueSubstring('thecatinthehat')); // 7
 console.log(findLongestUniqueSubstring('bbbbbb')); // 1
-// console.log(findLongestUniqueSubstring('longestsubstring')); // 8
-// console.log(findLongestUniqueSubstring('thisishowwedoit')); // 6
+console.log(findLongestUniqueSubstring('longestsubstring')); // 8
+console.log(findLongestUniqueSubstring('thisishowwedoit')); // 6

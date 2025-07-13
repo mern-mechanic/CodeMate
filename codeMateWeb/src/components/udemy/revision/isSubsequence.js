@@ -1,11 +1,11 @@
-const isSubsequence = (word, string) => {
+const isSubsequence = (s, t) => {
     let p1 = 0;
     let p2 = 0;
 
-    while (p2 < string.length) {
-        if (string[p2] === word[p1]) {
+    while (p2 < t.length) {
+        if (s[p1] === t[p2]) {
             p1++;
-            if (p1 === word.length) return true;
+            if (p1 === s.length) return true;
         } else {
             p1 = 0;
         }
@@ -15,4 +15,4 @@ const isSubsequence = (word, string) => {
     return false;
 };
 
-console.log(isSubsequence('hello', 'ohello world'));
+console.log(isSubsequence('hello', 'sdjf sjkd fkdhf jksdfh jksdhf dksohello world'));

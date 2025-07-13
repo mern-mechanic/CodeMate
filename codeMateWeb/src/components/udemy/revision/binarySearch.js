@@ -1,19 +1,16 @@
-const binarySearch = (arr, num) => {
-    let start = 0;
-    let end = arr.length - 1;
-    if (arr[start] === num) return 0;
-    if (arr[end] === num) return end;
-    let mid = Math.floor((start + end) / 2);
+const binarySearch = (arr, target) => {
+    let left = 0;
+    let right = arr.length - 1;
 
-    while (start !== mid && end !== mid) {
-        if (num > arr[mid]) {
-            start = mid;
-        } else if (num < arr[mid]) {
-            end = mid;
-        } else {
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (target === arr[mid]) {
             return mid;
+        } else if (target > arr[mid]) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
         }
-        mid = Math.floor((start + end) / 2);
     }
 
     return -1;
