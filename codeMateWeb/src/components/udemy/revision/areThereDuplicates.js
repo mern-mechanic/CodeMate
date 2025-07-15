@@ -22,3 +22,16 @@ Space - O(1)
 use frequency counter pattern to calculate the frequency and then loop over it
 
 */
+
+const hasDuplicates = (arr) => {
+    const charFrequency = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (charFrequency[arr[i]]) return true;
+        charFrequency[arr[i]] = (charFrequency[arr[i]] || 0) + 1;
+    }
+
+    return false;
+};
+
+console.log(hasDuplicates([1, 2, 3, 4, 5, 6]));

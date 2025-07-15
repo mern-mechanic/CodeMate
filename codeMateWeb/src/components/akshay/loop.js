@@ -1,1 +1,1 @@
-console.clear('Amisha JI Ka class');
+// console.clear('Amisha JI Ka class');

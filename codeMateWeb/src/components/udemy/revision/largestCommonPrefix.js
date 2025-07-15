@@ -12,4 +12,4 @@ const largestCommonPrefix = (arr) => {
     return arr[0].slice(0, p1);
 };
 
-console.log(largestCommonPrefix(['flower', 'flow', 'flight']));
+// console.log(largestCommonPrefix(['flower', 'flow', 'flight']));
