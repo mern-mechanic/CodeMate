@@ -32,14 +32,31 @@ b = a - diff;
 */
 
 const findDifferenceFromArray = (arr, diff) => {
-    const seen = new Set();
+    const traversedElement = new Set();
 
     for (let i = 0; i < arr.length; i++) {
-        if (seen.has(diff + arr[i]) || seen.has(arr[i] - diff)) return true;
-        seen.add(arr[i]);
+        /*
+            a - b = diff
+            a = diff + b
+            b = a - diff
+        */
+        if (traversedElement.has(diff + arr[i]) || traversedElement.has(arr[i] - diff)) return true;
+
+        traversedElement.add(arr[i]);
     }
 
     return false;
 };
 
-console.log(findDifferenceFromArray([6, 1, 4, 10, 2, 4], 2));
+console.log(findDifferenceFromArray([6, 1, 4, 10, 2, 4], 2)); // true
+console.log(findDifferenceFromArray([6, 1, 4, 10, 2, 4], 2)); // true
+console.log(findDifferenceFromArray([8, 6, 2, 4, 1, 0, 2, 5, 13], 1)); // true
+console.log(findDifferenceFromArray([4, -2, 3, 10], -6)); // true
+console.log(findDifferenceFromArray([6, 1, 4, 10, 2, 4], 22)); // false
+console.log(findDifferenceFromArray([], 0)); // false
+console.log(findDifferenceFromArray([5, 5], 0)); // true
+console.log(findDifferenceFromArray([-4, 4], -8)); // true
+console.log(findDifferenceFromArray([-4, 4], 8)); // true
+console.log(findDifferenceFromArray([1, 3, 4, 6], -2)); // true
+console.log(findDifferenceFromArray([0, 1, 3, 4, 6], -2)); // true
+console.log(findDifferenceFromArray([1, 2, 3], 0)); // false

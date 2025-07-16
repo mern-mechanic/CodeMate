@@ -49,3 +49,7 @@ const constructNote = (message, letters) => {
     // return true by default
     return true;
 };
+
+constructNote('aa', 'abc'); // false
+constructNote('abc', 'dcba'); // true
+constructNote('aabbcc', 'bcabcaddff'); // true

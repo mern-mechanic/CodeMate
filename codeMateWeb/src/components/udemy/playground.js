@@ -1,19 +1,23 @@
-const findFirstIndexOfZero = (arr) => {
+console.clear();
+console.log('<------------------ CODE -------------------->');
+
+const findLastIndexOfZero = (arr) => {
     let left = 0;
     let right = arr.length - 1;
-    let lastIndex = 0;
+    let lastIndex = -1;
 
-    while (left <= right) {
+    while (left < right) {
         let mid = Math.floor((left + right) / 2);
+
         if (arr[mid] === 0) {
             lastIndex = mid;
-            right = mid - 1;
+            left = mid;
         } else {
-            left = mid + 1;
+            right = mid - 1;
         }
     }
 
     return lastIndex;
 };
 
-console.log(findFirstIndexOfZero([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]));
+console.log(findLastIndexOfZero([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]));
