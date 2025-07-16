@@ -151,6 +151,8 @@ const Resume = () => {
                     'Migrated the web application to a Progressive Web App (PWA) using Workbox, adding offline support, background sync, and installability.',
                     'Integrated a robust API retry mechanism to gracefully handle network disruptions and ensure reliable data transactions.',
                     'Developed a SKU search, transaction, and receipt sync system that operates fully offline and syncs automatically when connectivity is restored.',
+                    'Refactored and optimized Node.js backend services to support offline-first architecture, using CouchDB for sync and data conflict resolution.',
+                    'Built RESTful APIs to support SKU transactions, integrated with PouchDB for client-side syncing and auto-reconciliation.',
                 ],
                 technologies:
                     'Electron, React, Redux, Data Dog, Mixpanel, Telemetry, Mui, Chakra UI, Tailwind, Daisy UI, Node, Express, MongoDB, AWS, Amplify, IndexDB, CouchDB, PouchDB',
@@ -167,6 +169,9 @@ const Resume = () => {
                     'Elevated web performance by conducting in-depth Google Lighthouse audits and implementing key optimizations that significantly improved Core Web Vitals and page load times.',
                     'Enhanced user experience and reduced support queries by over 25% through the successful rollout of a SKU-based product search feature.',
                     'Delivered scalable, pixel-perfect web solutions under aggressive timelines through seamless cross-functional collaboration with design, QA, and product teams.',
+                    'Designed and maintained Node.js microservices to handle high-traffic catalog data, enabling fast search and filtering.',
+                    'Developed secure backend APIs for payment gateway integrations (Razorpay, Cashfree, Decentro) with proper error handling and retry logic.',
+                    'Improved scalability and response time by profiling Node.js API performance and optimizing DB queries in MongoDB.',
                 ],
                 technologies:
                     'React, Redux, Node, Express, MongoDB, AWS, Git, Angular, Html, CSS/SCSS, Javascript, Typescript, Jira, Docker, Angular Material, SSR, Mixpanel',
@@ -184,6 +189,8 @@ const Resume = () => {
                     'Minimizing payload size via the elimination of unused sprite sheets and comprehensive media asset optimization.',
                     'Accelerating initial bundle load by 60% through the implementation of comprehensive lazy loading for all modules.',
                     'Further enhancing speed by applying Brotli compression to shrink payloads and improve overall load times.',
+                    'Led backend development of reusable user access control modules using Node.js, Express, and JWT-based auth, deployed via internal NPM packages.',
+                    'Built modular REST APIs for bot builder features, improving dev velocity and debugging across teams.',
                 ],
                 technologies:
                     'Typescript, Angular, JQuery, Html, CSS, Javascript, Node, Express, MongoDB, AWS, Git, Jira, Angular Material, Icomoon',
@@ -198,6 +205,8 @@ const Resume = () => {
                     'Led the strategic migration of a legacy CMS-based web application to Angular, resulting in vastly improved UI/UX and long-term maintainability.',
                     'Built and managed critical e-commerce features and product workflows on the PrestaShop platform, directly supporting key business operations and marketing campaigns.',
                     'Collaborated seamlessly across design, QA, and content teams to deliver high-impact web solutions consistently under aggressive deadlines.',
+                    'Built custom REST APIs in Node.js and Express to support Angular frontend migration, reducing server-side render dependencies.',
+                    'Integrated PrestaShop with custom Node.js services to enhance product workflows and real-time inventory sync.',
                 ],
                 technologies:
                     'Angular, Typescript,  Php, Javascript, JQuery, Prestashop, Wordpress, Gulp, Webpack, Html/Pug, Css/Scss, Bootstrap, Angular Material, Git, Jira',
@@ -209,6 +218,7 @@ const Resume = () => {
                 achievements: [
                     "Developed and optimized 'Plan My Medical Trip', significantly enhancing the digital presence and service offerings for a leading travel agency.",
                     'Elevated proficiency across core front-end technologies, including Angular JS, JavaScript, jQuery, HTML, CSS, and Bootstrap.',
+                    'Built basic backend functionality for form handling and dynamic content using Node.js and Express.',
                 ],
                 technologies:
                     'AngularJS, JQuery, Javascript, AWS, Filezila, HTML, CSS, Bootstrap, Git, Jira',
