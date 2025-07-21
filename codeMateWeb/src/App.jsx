@@ -17,6 +17,7 @@ import Resume from './pages/Resume';
 import Algo from './pages/Algo';
 import Akshay from './pages/Akshay';
 import Udemy from './pages/Udemy';
+import Letter from './pages/Letter';
 
 function App() {
     return (
@@ -51,6 +52,7 @@ function App() {
                 <Route path="/playground" element={<Udemy />} />
                 <Route path="/memo" element={<Memo />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/letter" element={<Letter />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Provider>

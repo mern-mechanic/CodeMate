@@ -1,12 +1,9 @@
 const isPowerOfTwo = (num) => {
-    if (num === 1) {
-        return true;
-    } else if (num < 1) {
-        return false;
-    }
+    if (num === 1) return true;
+    if (num < 1 || num % 2 !== 0) return false;
 
-    const newVal = num / 2;
-    return isPowerOfTwo(newVal);
+    return isPowerOfTwo(num / 2);
 };
 
-console.log(isPowerOfTwo(144));
+console.log(isPowerOfTwo(144)); // false
+console.log(isPowerOfTwo(128)); // true
