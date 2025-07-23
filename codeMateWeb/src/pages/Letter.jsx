@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     logo: {
-        width: 130,
-        height: 70,
+        width: 150,
+        height: 80,
     },
     companyInfo: {
         textAlign: 'right',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         marginLeft: 32,
     },
     companyName: {
-        fontSize: 14,
+        fontSize: 11,
         fontWeight: 'bold',
         marginBottom: 4,
     },
@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 2,
-        width: '100%',
+        width: '61.5%',
+        alignSelf: 'flex-end', // This moves the entire row to the right
     },
     infoLabel: {
-        fontWeight: 'bold',
         minWidth: 60, // Ensures consistent spacing
     },
     infoValue: {
@@ -96,14 +96,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     letterContent: {
-        marginBottom: 24,
+        marginBottom: 0,
     },
     paragraph: {
         marginBottom: 16,
         textAlign: 'justify',
     },
     signatureSection: {
-        marginTop: 40,
+        marginTop: 20,
         marginBottom: 20,
     },
     signatoryUrl: {
@@ -206,12 +206,12 @@ const Letter = () => {
         cin: 'U72300DL2015FTC279856',
         email: 'care@moglix.com',
         phone: '+91-9555988544',
-        date: '23-Sept-22',
+        date: '07-Aug-22',
         employeeName: 'Abhishek Kumar',
         designation: 'Lead Web Developer - Online, Tech - Commerce',
         employeeCode: '11769',
-        startDate: '21-Dec-16',
-        endDate: '24-Sep-19',
+        startDate: '08-Feb-21',
+        endDate: '15-Jul-22',
         gender: 'male',
         signatoryUrl: 'https://i.ibb.co/pvK5fPZC/Screenshot-2025-07-21-at-5-25-24-PM.png',
         signatoryName: 'Saumya Khare',
@@ -256,10 +256,11 @@ const Letter = () => {
                 )}
                 <PDFDownloadLink
                     document={<ExperienceLetterPDF letterData={letterData} />}
-                    fileName={`${letterData.employeeName.replace(
-                        /\s+/g,
-                        '_'
-                    )}_Experience_Certificate.pdf`}
+                    fileName={`11769.pdf`}
+                    // fileName={`${letterData.employeeName.replace(
+                    //     /\s+/g,
+                    //     '_'
+                    // )}_Experience_Certificate.pdf`}
                     className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 font-medium"
                 >
                     {({ loading }) => (loading ? 'Generating PDF...' : '📄 Download PDF')}

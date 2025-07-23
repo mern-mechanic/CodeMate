@@ -12,4 +12,5 @@ const isPalindrome = (str) => {
     return true;
 };
 
-console.log(isPalindrome('rameshhsemar'));
+// console.log(isPalindrome('rameshhsemar'));
+console.log(isPalindrome('A man, a plan, a canal: Panama'));

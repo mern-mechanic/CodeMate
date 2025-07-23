@@ -9,6 +9,7 @@ const findLongestUniqueSubstring = (str) => {
     while (p2 < str.length) {
         const char = str[p2];
 
+        // "Have I seen this character after or at the current window's start (p1)? If yes, I have a duplicate in the current window, and I must move p1 forward."
         if (seenCharacters[char] >= p1) {
             p1 = seenCharacters[char] + 1;
         }

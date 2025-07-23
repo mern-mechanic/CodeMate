@@ -5,8 +5,3 @@ const getPowerOf = (base, power) => {
 };
 
 console.log(getPowerOf(2, 3));
-/*
-
-
-
-*/
