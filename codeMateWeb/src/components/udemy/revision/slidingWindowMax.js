@@ -1,15 +1,13 @@
-const findMaxInArray = (arr) => {
-    return arr.sort((a, b) => b - a)[0];
-};
+const slidingWindowMax = (arr, windowSize) => {
+    let tempSum = arr.slice(0, windowSize).reduce((acc, el) => (acc += el), 0);
+    let maxSum = tempSum;
 
-const slidingWindowMax = (arr, window) => {
-    const maxArr = [];
-
-    for (let i = 0; i < arr.length - window + 1; i++) {
-        maxArr.push(findMaxInArray(arr.slice(i, i + window)));
+    for (let i = 0; i < arr.length - windowSize; i++) {
+        tempSum = tempSum - arr[i] + arr[i + windowSize];
+        maxSum = Math.max(maxSum, tempSum);
     }
 
-    return maxArr;
+    return maxSum;
 };
 
 console.log(slidingWindowMax([1, 3, -1, -3, 5, 3, 6, 7], 3));
