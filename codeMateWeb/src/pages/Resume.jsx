@@ -141,7 +141,7 @@ const Resume = () => {
             {
                 company: 'Awantunai, Indonesia',
                 title: 'Senior SDE2',
-                period: 'July 2022 - Present',
+                period: 'July 2022 - July 2025',
                 achievements: [
                     'Led frontend implementation and architecture with patterns closely aligned to Angular modular development.',
                     'Successfully migrated a web application to a Progressive Web App (PWA) using Workbox, adding offline support, background sync, and installability.',
