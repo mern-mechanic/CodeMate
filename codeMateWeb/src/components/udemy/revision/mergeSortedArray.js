@@ -19,4 +19,4 @@ const mergeSortedArray = (left, right) => {
         : mergedArray.concat(left.slice(pointer1));
 };
 
-console.log(mergeSortedArray([1, 2, 3], [2, 5, 6]));
+console.log(mergeSortedArray([1, 2, 3], [2, 5, 6, 7, 8, 9]));
