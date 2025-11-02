@@ -1,23 +1,46 @@
 console.clear();
-console.log(
-    '<--------------------------- कोड सैंडबॉक्स में आपका स्वागत है --------------------------->'
-);
+console.log('<---------------- कोड सैंडबॉक्स में आपका स्वागत है ----------------->');
 
-const sumZero = (arr, target) => {
-    let left = 0;
-    let right = arr.length - 1;
-    while (left < right) {
-        let tempSum = arr[left] + arr[right];
-        if (tempSum === target) {
-            return [left, right];
-        } else if (target > tempSum) {
-            left++;
-        } else {
-            right--;
-        }
+/*
+
+Frequency Counter - constructNote
+Write a function called constructNote, which accepts two strings, a message and some letters. The function should return true if the message can be built with the letters that you are given, or it should return false.
+
+Assume that there are only lowercase letters and no space or special characters in both the message and the letters.
+
+Bonus Constraints:
+
+If M is the length of message and N is the length of letters:
+
+Time Complexity: O(M+N)
+
+Space Complexity: O(N)
+
+Examples:
+
+console.log(constructNote('aa', 'abc')); // false
+console.log(constructNote('abc', 'dcba')); // true
+console.log(constructNote('aabbcc', 'bcabcaddff')); // true
+
+*/
+
+const generateFrequency = (text) => {
+    const msgFrq = {};
+    for (let char in text) {
+        msgFrq[char] = (msgFrq[char] || 0) + 1;
     }
 
-    return [-1, -1];
+    return msgFrq;
 };
 
-console.log(sumZero([-3, -2, -1, 0, 1, 2], 0));
+const constructNote = (msg, letters) => {
+    const msgFrq = generateFrequency(msg);
+    const ltrFrq = generateFrequency(letters);
+
+    console.log(msgFrq);
+    console.log(ltrFrq);
+
+    return false;
+};
+
+console.log(constructNote('aa', 'abc')); // false
