@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import LazyLoader from './pages/LazyLoader';
+import MousePosition from './pages/MousePosition';
 
 const Feed = lazy(() => import('./pages/Feed'));
 const Help = lazy(() => import('./pages/Help'));
@@ -19,6 +20,7 @@ const Resume = lazy(() => import('./pages/Resume'));
 const Akshay = lazy(() => import('./pages/Akshay'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Profile = lazy(() => import('./pages/Profile'));
+const Ingredients = lazy(() => import('./pages/Ingredients'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Playground = lazy(() => import('./pages/Playground'));
 const Connections = lazy(() => import('./pages/Connections'));
@@ -30,10 +32,10 @@ function App() {
 
     useEffect(() => {
         setShowLoader(true);
-        console.log('Effect called : ' + new Date().toLocaleTimeString());
-        console.log('Timer set : ' + new Date().toLocaleTimeString());
+        // console.log('Effect called : ' + new Date().toLocaleTimeString());
+        // console.log('Timer set : ' + new Date().toLocaleTimeString());
         const timer = setTimeout(() => {
-            console.log('Loader hidden : ' + new Date().toLocaleTimeString());
+            // console.log('Loader hidden : ' + new Date().toLocaleTimeString());
             setShowLoader(false);
         }, 600);
         return () => clearTimeout(timer);
@@ -65,6 +67,8 @@ function App() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route path="/mouse-position" element={<MousePosition />} />
+                    <Route path="/ingredients" element={<Ingredients />} />
                     <Route path="/immer" element={<Immer />} />
                     <Route path="/chart" element={<Chart />} />
                     <Route path="/chat" element={<Chat />} />
